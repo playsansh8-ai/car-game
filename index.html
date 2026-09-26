@@ -15,6 +15,34 @@
 }
 
 body{
+    <div id="gameMenu">
+  <h1>🚗 3D Car Driving Game</h1>
+  <p>Drive • Race • Explore</p>
+
+  <button onclick="startGame()">▶ PLAY GAME</button>
+  <button onclick="shareGame()">🔗 SHARE GAME</button>
+</div>
+
+<script>
+function startGame() {
+  document.getElementById("gameMenu").style.display = "none";
+}
+
+function shareGame() {
+  const gameURL = "https://playsansh8-ai.github.io/car-game/";
+
+  if (navigator.share) {
+    navigator.share({
+      title: "3D Car Driving Game",
+      text: "Play this 3D car driving game online! 🚗💨",
+      url: gameURL
+    });
+  } else {
+    navigator.clipboard.writeText(gameURL);
+    alert("Game link copied! 🚗💨");
+  }
+}
+</script>
     overflow:hidden;
     background:#000;
     font-family:Arial,sans-serif;
